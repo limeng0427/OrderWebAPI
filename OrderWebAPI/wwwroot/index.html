@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order CRUD</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order CRUD</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-customerName" placeholder="Customer Name">
+        <input type="text" id="add-deliveryAddress" placeholder="Delivery Address">
+        <input type="submit" value="Add"><br /><br />
+        <input type="text" id="add-productName1" placeholder="Product 1">
+        <input type="text" id="add-price1" placeholder="Price 1">
+        <input type="text" id="add-quantity1" placeholder="Quantity 1">
+        <br />
+        <input type="text" id="add-productName2" placeholder="Product 2">
+        <input type="text" id="add-price2" placeholder="Price 2">
+        <input type="text" id="add-quantity2" placeholder="Quantity 2">
+        <br />
+        <input type="text" id="add-productName3" placeholder="Product 3">
+        <input type="text" id="add-price3" placeholder="Price 3">
+        <input type="text" id="add-quantity3" placeholder="Quantity 3">
+    </form>
+
+    <div id="spoiler">
+        <h3>Edit</h3>
+        <form class="my-form">
+            <input type="hidden" id="edit-orderId">
+            <input type="text" id="edit-customerName">
+            <input type="text" id="edit-deliveryAddress">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>OrderId</th>
+            <th>CustomerName</th>
+            <th>DeliveryAddress</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="orders"></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="site.js"></script>
+</body>
+</html>
